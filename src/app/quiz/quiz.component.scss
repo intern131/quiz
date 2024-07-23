@@ -1,0 +1,113 @@
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+
+@mixin media-query($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h3 {
+  color: $primary-color;
+}
+
+form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 20px;
+
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      b {
+        color: $success-color;
+      }
+    }
+  }
+
+  button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &.btn-danger {
+      background-color: $danger-color;
+      color: #fff;
+    }
+  }
+}
+
+h3.score {
+  text-align: center;
+  color: $secondary-color;
+}
+
+@include media-query('sm') {
+  form {
+    padding: 10px;
+
+    ul li {
+      margin-bottom: 10px;
+
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+    }
+
+    button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+}
+
+@include media-query('md') {
+  form {
+    max-width: 600px;
+  }
+}
+
+@include media-query('lg') {
+  form {
+    max-width: 500px;
+  }
+}
+
+@include media-query('xl') {
+  form {
+    max-width: 400px;
+  }
+}

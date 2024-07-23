@@ -1,0 +1,55 @@
+<h1>{{ title }}</h1>
+<form (ngSubmit)="onSubmit()">
+  <ul>
+    <li>
+      <h3>{{ question1 }}</h3>
+      <input type="radio" name="question1" value="A" [(ngModel)]="userAnswers.question1"> A) To create systems that can understand human emotions <br>
+      <input type="radio" name="question1" value="B" [(ngModel)]="userAnswers.question1"> B) To create systems that can perform tasks that require human intelligence <br>
+      <input type="radio" name="question1" value="C" [(ngModel)]="userAnswers.question1"> C) To replace all human workers with robots <br>
+      <input type="radio" name="question1" value="D" [(ngModel)]="userAnswers.question1"> D) To make computers that are faster and more efficient <br>
+      <b *ngIf="reveal">Correct answer is: {{ answer1 }}</b>
+    </li>
+
+    <li>
+      <h3>{{ question2 }}</h3>
+      <input type="radio" name="question2" value="A" [(ngModel)]="userAnswers.question2"> A) Autonomous vehicles <br>
+      <input type="radio" name="question2" value="B" [(ngModel)]="userAnswers.question2"> B) Predictive maintenance <br>
+      <input type="radio" name="question2" value="C" [(ngModel)]="userAnswers.question2"> C) Diagnostic systems <br>
+      <input type="radio" name="question2" value="D" [(ngModel)]="userAnswers.question2"> D) Recommendation systems <br>
+      <b *ngIf="reveal">Correct answer is: {{ answer2 }}</b>
+    </li>
+
+    <li>
+      <h3>{{ question3 }}</h3>
+      <input type="radio" name="question3" value="A" [(ngModel)]="userAnswers.question3"> A) K-means clustering <br>
+      <input type="radio" name="question3" value="B" [(ngModel)]="userAnswers.question3"> B) Linear regression <br>
+      <input type="radio" name="question3" value="C" [(ngModel)]="userAnswers.question3"> C) Support Vector Machines (SVM) <br>
+      <input type="radio" name="question3" value="D" [(ngModel)]="userAnswers.question3"> D) Principal Component Analysis (PCA) <br>
+      <b *ngIf="reveal">Correct answer is: {{ answer3 }}</b>
+    </li>
+
+    <li>
+      <h3>{{ question4 }}</h3>
+      <input type="radio" name="question4" value="A" [(ngModel)]="userAnswers.question4"> A) Natural Learning Process <br>
+      <input type="radio" name="question4" value="B" [(ngModel)]="userAnswers.question4"> B) Natural Language Processing <br>
+      <input type="radio" name="question4" value="C" [(ngModel)]="userAnswers.question4"> C) Neural Language Programming <br>
+      <input type="radio" name="question4" value="D" [(ngModel)]="userAnswers.question4"> D) Network Language Processing <br>
+      <b *ngIf="reveal">Correct answer is: {{ answer4 }}</b>
+    </li>
+
+    <li>
+      <h3>{{ question5 }}</h3>
+      <input type="radio" name="question5" value="A" [(ngModel)]="userAnswers.question5"> A) Decision tree <br>
+      <input type="radio" name="question5" value="B" [(ngModel)]="userAnswers.question5"> B) Bayesian network <br>
+      <input type="radio" name="question5" value="C" [(ngModel)]="userAnswers.question5"> C) Convolutional Neural Network (CNN) <br>
+      <input type="radio" name="question5" value="D" [(ngModel)]="userAnswers.question5"> D) K-Nearest Neighbors (KNN) <br>
+      <b *ngIf="reveal">Correct answer is: {{ answer5 }}</b>
+    </li>
+  </ul>
+
+  <button type="submit">Submit</button>
+  <button type="reset" class="btn-group btn btn-danger ">Reset</button>
+  <button type="button" (click)="revealAnswer()">Reveal Answer</button>
+</form>
+
+<h3 *ngIf="score !== null">Your score: {{ score }}/5</h3>
